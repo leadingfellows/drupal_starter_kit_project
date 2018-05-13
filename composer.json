@@ -1,0 +1,77 @@
+{
+    "name": "leadingfellows/drupal_starter_kit_project",
+    "description": "Project template for Drupal 8 projects with composer",
+    "type": "project",
+    "license": "GPL-2.0+",
+    "authors": [
+        {
+            "name": "",
+            "role": ""
+        }
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ],
+    "require": {
+        "drupal-composer/drupal-project": "~2.2",
+        "leadingfellows/drupal_starter_kit_module": "dev-master"
+    },
+    "require-dev": {
+    },
+    "conflict": {
+        "drupal/drupal": "*"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true
+    },
+    "autoload": {
+    },
+    "scripts": {
+        "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
+    },
+    "extra": {
+        "installer-types": [
+            "bower-asset",
+            "npm-asset"
+        ],
+        "installer-paths": {
+            "web/core": ["type:drupal-core"],
+            "web/libraries/{$name}": ["type:drupal-library", "type:bower-asset", "type:npm-asset"],
+            "web/modules/contrib/{$name}": ["type:drupal-module"],
+            "web/profiles/contrib/{$name}": ["type:drupal-profile"],
+            "web/themes/contrib/{$name}": ["type:drupal-theme"],
+            "drush/contrib/{$name}": ["type:drupal-drush"]
+            
+        },
+        "enable-patching": true,
+        "merge-plugin": {
+            "include": [
+                "composer.*.json",
+                "web/modules/custom/*/composer.json",
+                "web/modules/contrib/*/composer.json",
+                "web/themes/custom/*/composer.json",
+                "web/themes/contrib/*/composer.json",
+                "web/profiles/contrib/*/composer.json",
+                "web/profiles/custom/*/composer.json"
+            ],
+            "require": [
+            ],
+            "recurse": true,
+            "replace": false,
+            "ignore-duplicates": false,
+            "merge-dev": false,
+            "merge-extra": true,
+            "merge-extra-deep": true,
+            "merge-scripts": true
+        }
+    }
+}
