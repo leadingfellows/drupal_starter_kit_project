@@ -20,7 +20,7 @@
         }
     ],
     "require": {
-        "drupal-composer/drupal-project": "~2.2",
+        "drupal-composer/drupal-project": "8.x-dev",
         "leadingfellows/drupal_starter_kit_module": "dev-master"
     },
     "require-dev": {
