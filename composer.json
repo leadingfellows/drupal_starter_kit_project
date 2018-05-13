@@ -39,6 +39,11 @@
         "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold"
     },
     "extra": {
+        "leadingfellows": {
+          "drupal": {
+            "webroot": "web"
+          }
+        },
         "installer-types": [
             "bower-asset",
             "npm-asset"
